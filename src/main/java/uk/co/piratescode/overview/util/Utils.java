@@ -44,7 +44,7 @@ public class Utils {
         return servers.exists();
     }
 
-    public static void backgroundTask() {
+    public static void loadJsonServersFile() {
         File servers = new File(Paths.get("").toAbsolutePath().toFile(), "/servers.json");
         Gson gson = new Gson();
 

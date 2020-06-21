@@ -26,8 +26,8 @@ public class Main extends Application {
         LoggingUtil.log(Level.INFO, "Loaded");
         Utils.InitialStartup();
 
-        LoggingUtil.log(Level.INFO, "Starting Background Tasks");
-        Utils.backgroundTask();
+        LoggingUtil.log(Level.INFO, "Starting Tasks");
+        Utils.loadJsonServersFile();
 
         // nothing else runs beyond this function `launch()` until the program exits
         launch(args);
