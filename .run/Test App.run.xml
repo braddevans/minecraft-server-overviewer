@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Test App" type="JarApplication">
     <option name="JAR_PATH" value="$PROJECT_DIR$/build/libs/minecraft-server-overview-1.jar" />
-    <option name="WORKING_DIRECTORY" value="H:\workspaces\oof\minecraft-server-overview" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     <option name="ALTERNATIVE_JRE_PATH" />
     <method v="2">
       <option name="Gradle.BeforeRunTask" enabled="true" tasks="clean jar" externalProjectPath="$PROJECT_DIR$" vmOptions="" scriptParameters="" />
