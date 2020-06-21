@@ -6,7 +6,9 @@ import org.apache.log4j.Level;
 import uk.co.piratescode.overview.Main;
 import uk.co.piratescode.overview.entitys.Server;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,12 +19,24 @@ public class Utils {
         return Main.servers;
     }
 
-    public static Server getServerByName(String server) {
-        return Main.servers.get(server);
+    public static Server getServerByName(String serverName) {
+        Server outputServer = null;
+        for (Server server : getServers().values()) {
+            if (server.getServerName().equals(serverName)) {
+                outputServer = server;
+            }
+        }
+        return outputServer;
     }
 
     public static Server getServerByID(int id) {
-        return Main.servers.get(id);
+        Server outputServer = null;
+        for (Server server : getServers().values()) {
+            if (server.getListID() == id) {
+                outputServer = server;
+            }
+        }
+        return outputServer;
     }
 
     public static boolean InitialStartup() {
@@ -47,7 +61,7 @@ public class Utils {
             // Java objects to String
             String json = gson.toJson(serverList);
 
-            LoggingUtil.log(Level.INFO, json.replace("\n", "").replace("    ","").replace("  ",""));
+            LoggingUtil.log(Level.INFO, json.replace("\n", "").replace("    ", "").replace("  ", ""));
 
             try {
                 FileWriter writer = new FileWriter(servers);
@@ -60,6 +74,6 @@ public class Utils {
     }
 
     private static Server createServerObject(int id) {
-        return new Server(id,"test1","",2222,true);
+        return new Server(id, "test" + id, "", 2222 + id, true);
     }
 }
