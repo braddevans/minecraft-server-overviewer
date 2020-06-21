@@ -8,11 +8,12 @@
 
 ##
 
-###Example ServerList File
+### Example ServerList File
 
-###This will be Generated On First Startup or if the file isn't inside the directory
+##### This will be Generated On First Startup or if the file isn't inside the directory
 
-###servers.json
+##### servers.json
+
 ```json
 [
   {
