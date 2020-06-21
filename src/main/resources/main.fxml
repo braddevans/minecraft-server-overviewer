@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="700.0" prefWidth="1500.0"
+      xmlns="http://javafx.com/javafx/10.0.2-internal" fx:controller="uk.co.piratescode.overview.controllers.Controller">
+    <children>
+        <MenuBar VBox.vgrow="NEVER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Preferences…"/>
+                        <SeparatorMenuItem mnemonicParsing="false"/>
+                        <MenuItem fx:id="closeButton" mnemonicParsing="false" onAction="#closeApplication" text="Quit"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#ItemList" text="DebugItem"/>
+                        <MenuItem mnemonicParsing="false" text="About"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <SplitPane dividerPositions="0.16421895861148197, 0.8551401869158879" focusTraversable="true"
+                   VBox.vgrow="ALWAYS">
+            <items>
+                <ListView fx:id="serverlist" onMouseClicked="#handleMouseClick" VBox.vgrow="ALWAYS">
+                    <padding>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
+                    </padding>
+                </ListView>
+                <ScrollPane>
+                    <content>
+                        <AnchorPane id="Content">
+                            <children>
+                                <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" style="&#10;" text="Console"
+                                       textAlignment="CENTER" wrapText="false">
+                                    <font>
+                                        <Font fx:id="Center_Pane_Font" size="18.0"/>
+                                    </font>
+                                    <textFill>
+                                        <Color red="0.624" green="0.624" blue="0.624" fx:id="Center_Pane_TextColor"/>
+                                    </textFill>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </ScrollPane>
+                <AnchorPane>
+                    <children>
+                        <Label alignment="CENTER" font="$Center_Pane_Font" layoutX="14.0" layoutY="14.0" style="&#10;"
+                               text="TPS,CPU,MEMORY" textAlignment="CENTER" textFill="$Center_Pane_TextColor"
+                               wrapText="false"/>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+        <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+            <children>
+                <Label maxHeight="1.7976931348623157E308" fx:id="LeftStatus" text="$Left_Status" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font fx:id="Bottom_Status_Pane_Font" size="11.0"/>
+                    </font>
+                    <textFill>
+                        <Color red="0.625" green="0.625" blue="0.625" fx:id="Bottom_Status_Pane_TextColor"/>
+                    </textFill>
+                </Label>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Label font="$Bottom_Status_Pane_Font" fx:id="RightStatus" text="null"
+                       textFill="$Bottom_Status_Pane_TextColor"
+                       HBox.hgrow="NEVER"/>
+            </children>
+            <padding>
+                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
+            </padding>
+        </HBox>
+    </children>
+</VBox>

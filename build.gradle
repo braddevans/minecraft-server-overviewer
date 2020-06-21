@@ -1,0 +1,62 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    maven {
+        name("Piratescode");
+        url = "https://nexus.piratescode.co.uk/repository/maven-public/";
+    }
+    jcenter()
+    mavenCentral()
+    google()
+    mavenLocal()
+}
+
+version = '1'
+group = "uk.co.piratescode"
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+
+
+dependencies {
+    compile 'log4j:log4j:1.2.17'
+    compile 'com.google.code.gson:gson:2.8.6'
+}
+
+
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+        resources {
+            srcDirs = ["src/main/resources"]
+        }
+    }
+
+    test {
+        java {
+            srcDirs = ['test']
+        }
+    }
+}
+
+compileJava {
+    options.incremental = true
+    options.fork = true
+    options.failOnError = false
+}
+
+jar {
+    manifest {
+        attributes("Implementation-Title": "Minecraft Server Overview",
+                "Implementation-Version": archiveVersion,
+                "Main-Class": 'uk.co.piratescode.overview.Main')
+    }
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
