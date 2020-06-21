@@ -1,10 +1,11 @@
 # MineCraft Server Overview
 ##### Specific Repo Version and Misc info:
-[![Generic badge](https://img.shields.io/badge/Java-1.8-blue.svg)](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html)
+![Generic badge](https://img.shields.io/badge/Current_Status-Alpha-purple.svg)
+[![Generic badge](https://img.shields.io/badge/Maintainer-braddevans-red.svg)](https://github.com/braddevans/)
 
+[![Generic badge](https://img.shields.io/badge/Java-1.8-blue.svg)](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html)
 ![Generic badge](https://img.shields.io/badge/Current_Version-1-orange.svg)
 
-[![Generic badge](https://img.shields.io/badge/Maintainer-braddevans-red.svg)](https://github.com/braddevans/)
 
 ##
 
