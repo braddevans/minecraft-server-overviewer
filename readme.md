@@ -7,10 +7,12 @@
 [![Generic badge](https://img.shields.io/badge/Maintainer-braddevans-red.svg)](https://github.com/braddevans/)
 
 ##
-#####Example ServerList File
-######This will be Generated On First Startup or if the file isn't inside the directory
 
-#####servers.json
+###Example ServerList File
+
+###This will be Generated On First Startup or if the file isn't inside the directory
+
+###servers.json
 ```json
 [
   {
